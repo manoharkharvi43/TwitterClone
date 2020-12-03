@@ -3,9 +3,9 @@ import styled from "styled-components";
 import * as icon from "react-icons/all";
 const ModalView = styled.div`
 	position: absolute;
-	width: 35%;
+	width: 40%;
 	height: 35%;
-	left: 30%;
+	left: 35%;
 	top: 4%;
 	border-radius: 10px;
 	border: 1px solid rgba(240, 240, 240, 0.2);

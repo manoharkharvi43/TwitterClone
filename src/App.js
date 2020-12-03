@@ -1,7 +1,7 @@
 import "./App.css";
 import NavbarItem from "./Components/NavbarItem";
 import DATA from "./Components/data";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, Link , NavLink } from "react-router-dom";
 import AllRoutes from "./Components/AllRoutes";
 import styled from "styled-components";
 import { useState } from "react";
@@ -22,15 +22,27 @@ const Button = styled.button`
 	text-align: center;
 `;
 
+const MoreComp = styled.div`
+width:10rem;
+height:20rem;
+background-color: #15202b;
+position:absolute;
+top:20%;
+`
 function App() {
 	const [modal, showmodal] = useState(false);
+	const[more  ,showmore] = useState(false)
 	const itemClicked = (data) => {
-		console.log(data);
+		if(data === 'More')
+		showmore(true)
 	};
 
 	const showmodalScreen = () => {
 		if (modal) {
 			showmodal(false);
+		}
+		if(more){
+			showmore(false)
 		}
 	};
 
@@ -45,13 +57,13 @@ function App() {
 						<div className="navbar">
 							{DATA.map((data, index) => (
 								<>
-									<Link
+									<NavLink
 										to={data.link}
 										style={{ textDecoration: "none" }}
 										activeStyle={{
 											fontWeight: "bold",
-											color: "red",
-											backgroundColor:"#162d40",
+											Color:"#162d40",
+											borderRadius: "30px",
 										  }}
 									>
 										<NavbarItem
@@ -60,11 +72,13 @@ function App() {
 											navClicked={() => itemClicked(data.title)}
 											id={index}
 										/>
-									</Link>
+									</NavLink>
 								</>
 							))}
 
 							<Button onClick={() => showmodal(!modal)}>Tweet </Button>
+							{ more ?<MoreComp />:null}
+				
 						</div>
 					</div>
 					{/* navbar */}
@@ -72,7 +86,11 @@ function App() {
 					{/* //content */}
 					<div className="container2" onClick={showmodalScreen}>
 						<AllRoutes />
+
+
 					</div>
+
+				
 					{/* //content */}
 
 					<div className="container3" onClick={showmodalScreen}>

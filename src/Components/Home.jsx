@@ -10,13 +10,16 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:flex-start;
+h3{
+  
+}
 
 `
 const ModalView1 = styled.div`
 	width: 100%;
 	height: 10rem;
 	border-radius: 10px;
-	border: 1px solid rgba(240, 240, 240, 0.2);
+	border-bottom: 1px solid rgba(240, 240, 240, 0.2);
 	display: grid;
 	grid-template-rows: 20% 50% 25%;
     grid-template-columns: 15% 85%;
