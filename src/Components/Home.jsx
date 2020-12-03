@@ -3,17 +3,24 @@ import styled from "styled-components";
 import * as icon from "react-icons/all";
 
 
+const HomeWrapper = styled.div`
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:flex-start;
+
+`
 const ModalView1 = styled.div`
-	position: absolute;
-	width: 35%;
-	height: 35%;
-	left: 30%;
-	top: 4%;
+	width: 100%;
+	height: 10rem;
 	border-radius: 10px;
 	border: 1px solid rgba(240, 240, 240, 0.2);
 	display: grid;
-	grid-template-rows: 20% 60% 20%;
-	grid-template-columns: 15% 85%;
+	grid-template-rows: 20% 50% 25%;
+    grid-template-columns: 15% 85%;
+  
 `;
 
 const Header1 = styled.div`
@@ -104,7 +111,7 @@ const Footer1 = styled.div`
 function Modal() {
 
 	return (
-		<div>
+		<HomeWrapper>
              <h3 style={{color:'white'}}>Home</h3>
 			<ModalView1>
 				<Header1>
@@ -159,7 +166,7 @@ function Modal() {
 					</button>
 				</Footer1>
 			</ModalView1>
-		</div>
+		</HomeWrapper>
 	);
 }
 

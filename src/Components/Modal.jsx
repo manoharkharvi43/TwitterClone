@@ -11,7 +11,9 @@ const ModalView = styled.div`
 	border: 1px solid rgba(240, 240, 240, 0.2);
 	display: grid;
 	grid-template-rows: 20% 60% 20%;
-	grid-template-columns: 15% 85%;
+    grid-template-columns: 15% 85%;
+    z-index:200;
+    background-color: #15202b;
 `;
 
 const Header = styled.div`
